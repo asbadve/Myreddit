@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     @Override
     public void showReddItPost(List<Child> child) {
         textViewPaging.setText(1 + " of " + child.size());
-
         this.child = child;
         ReddItViewPagerAdapter reddItViewPagerAdapter = new ReddItViewPagerAdapter(getSupportFragmentManager(), MainActivity.this, child);
         reddItViewPager.setAdapter(reddItViewPagerAdapter);

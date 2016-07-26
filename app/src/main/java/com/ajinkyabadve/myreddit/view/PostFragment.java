@@ -79,7 +79,7 @@ public class PostFragment extends Fragment {
         });
         textViewCreator = (TextView) fragmentView.findViewById(R.id.textViewCreator);
         imageViewThumbnail = (ImageView) fragmentView.findViewById(R.id.imageViewThumbnail);
-        textViewTitle.setText(postTitle == null ? "" : postLink);
+        textViewTitle.setText(postTitle == null ? "" : postTitle);
         textViewCreator.setText(creator == null ? "" : creator);
         Picasso.with(getContext())
                 .load(thumbnailLink)

@@ -2,6 +2,8 @@ package com.ajinkyabadve.myreddit;
 
 import com.ajinkyabadve.myreddit.model.ReddIt;
 
+import okhttp3.ResponseBody;
+import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -27,8 +29,7 @@ public interface ReddItService {
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .build();
             return retrofit.create(ReddItService.class);
+
         }
-
-
     }
 }
