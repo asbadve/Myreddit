@@ -12,6 +12,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class Data_ {
 
     @SerializedName("domain")
@@ -40,7 +41,7 @@ public class Data_ {
     private Object suggestedSort;
     @SerializedName("user_reports")
     @Expose
-    private List<Object> userReports = new ArrayList<Object>();
+    private List<Object> userReports = new ArrayList<>();
     @SerializedName("secure_media")
     @Expose
     private Object secureMedia;
@@ -160,7 +161,7 @@ public class Data_ {
     private Object distinguished;
     @SerializedName("mod_reports")
     @Expose
-    private List<Object> modReports = new ArrayList<Object>();
+    private List<Object> modReports = new ArrayList<>();
     @SerializedName("visited")
     @Expose
     private boolean visited;
@@ -174,6 +175,7 @@ public class Data_ {
     /**
      * @return The domain
      */
+
     public String getDomain() {
         return domain;
     }
@@ -181,6 +183,7 @@ public class Data_ {
     /**
      * @param domain The domain
      */
+
     public void setDomain(String domain) {
         this.domain = domain;
     }
@@ -188,6 +191,7 @@ public class Data_ {
     /**
      * @return The bannedBy
      */
+
     public Object getBannedBy() {
         return bannedBy;
     }
@@ -195,6 +199,7 @@ public class Data_ {
     /**
      * @param bannedBy The banned_by
      */
+
     public void setBannedBy(Object bannedBy) {
         this.bannedBy = bannedBy;
     }
@@ -958,14 +963,11 @@ public class Data_ {
                 '}';
     }
 
-    public static class TitleSerilable implements JsonDeserializer<Data_>{
-
+    public static class TitleSerilable implements JsonDeserializer<Data_> {
 
 
         @Override
         public Data_ deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-
-
 
 
             return null;

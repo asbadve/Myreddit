@@ -37,6 +37,7 @@ public class Child {
     /**
      * @param data The data
      */
+    @SuppressWarnings("unused")
     public void setData(Data_ data) {
         this.data = data;
     }

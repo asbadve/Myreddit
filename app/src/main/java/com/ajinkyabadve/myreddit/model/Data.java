@@ -14,7 +14,7 @@ public class Data {
     private String modhash;
     @SerializedName("children")
     @Expose
-    private List<Child> children = new ArrayList<Child>();
+    private List<Child> children = new ArrayList<>();
     @SerializedName("after")
     @Expose
     private String after;
@@ -23,73 +23,64 @@ public class Data {
     private Object before;
 
     /**
-     * 
-     * @return
-     *     The modhash
+     * @return The modhash
      */
+    @SuppressWarnings("unused")
     public String getModhash() {
         return modhash;
     }
 
     /**
-     * 
-     * @param modhash
-     *     The modhash
+     * @param modhash The modhash
      */
+    @SuppressWarnings("unused")
     public void setModhash(String modhash) {
         this.modhash = modhash;
     }
 
     /**
-     * 
-     * @return
-     *     The children
+     * @return The children
      */
     public List<Child> getChildren() {
         return children;
     }
 
     /**
-     * 
-     * @param children
-     *     The children
+     * @param children The children
      */
+    @SuppressWarnings("unused")
     public void setChildren(List<Child> children) {
         this.children = children;
     }
 
     /**
-     * 
-     * @return
-     *     The after
+     * @return The after
      */
+    @SuppressWarnings("unused")
     public String getAfter() {
         return after;
     }
 
     /**
-     * 
-     * @param after
-     *     The after
+     * @param after The after
      */
+    @SuppressWarnings("unused")
     public void setAfter(String after) {
         this.after = after;
     }
 
     /**
-     * 
-     * @return
-     *     The before
+     * @return The before
      */
+    @SuppressWarnings("unused")
     public Object getBefore() {
         return before;
     }
 
     /**
-     * 
-     * @param before
-     *     The before
+     * @param before The before
      */
+    @SuppressWarnings("unused")
     public void setBefore(Object before) {
         this.before = before;
     }

@@ -26,9 +26,9 @@ import com.ajinkyabadve.myreddit.presenter.MainContract;
 import com.ajinkyabadve.myreddit.presenter.MainPresenter;
 import com.ajinkyabadve.myreddit.presenter.ReddItViewPagerAdapter;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
+import java.util.Locale;
+
 
 public class MainActivity extends AppCompatActivity implements MainContract.View, ViewPager.OnPageChangeListener {
     private MainContract.UserActionsListener mActionsListener;
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme_NoActionBar);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -98,9 +99,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void showReddItPost(List<Child> child) {
-        textViewPaging.setText(1 + " of " + child.size());
+        textViewPaging.setText(String.format(Locale.getDefault(), "%d of %d", 1, child.size()));
         this.child = child;
-        ReddItViewPagerAdapter reddItViewPagerAdapter = new ReddItViewPagerAdapter(getSupportFragmentManager(), MainActivity.this, child);
+        ReddItViewPagerAdapter reddItViewPagerAdapter = new ReddItViewPagerAdapter(getSupportFragmentManager(), child);
         reddItViewPager.setAdapter(reddItViewPagerAdapter);
     }
 
@@ -148,8 +149,9 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                             }).setActionTextColor(ContextCompat.getColor(MainActivity.this, R.color.colorAccent)).show();
                 }
 
-            } else if (intent.getBooleanExtra(ConnectivityManager.EXTRA_NO_CONNECTIVITY, Boolean.FALSE)) {
             }
+//            else if (intent.getBooleanExtra(ConnectivityManager.EXTRA_NO_CONNECTIVITY, Boolean.FALSE)) {
+//            }
         }
     }
 
@@ -161,7 +163,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     @Override
     public void onPageSelected(int position) {
         if (child != null) {
-            textViewPaging.setText((position + 1) + " of " + child.size());
+            textViewPaging.setText(String.format(Locale.getDefault(), "%d of %d", position + 1, child.size()));
         }
 
     }

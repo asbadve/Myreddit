@@ -26,7 +26,7 @@ public class ReddIApplication extends Application {
         return openWeatherMapService;
     }
 
-
+    @SuppressWarnings("unused")
     //For setting mocks during testing
     public void setReddItService(ReddItService openWeatherMap) {
         this.openWeatherMapService = openWeatherMap;
@@ -39,6 +39,7 @@ public class ReddIApplication extends Application {
         return defaultSubscribeScheduler;
     }
 
+    @SuppressWarnings("unused")
     //User to change scheduler from tests
     public void setDefaultSubscribeScheduler(Scheduler scheduler) {
         this.defaultSubscribeScheduler = scheduler;

@@ -9,23 +9,14 @@ import com.ajinkyabadve.myreddit.ReddItService;
 import com.ajinkyabadve.myreddit.Util;
 import com.ajinkyabadve.myreddit.model.Child;
 import com.ajinkyabadve.myreddit.model.Data;
-import com.ajinkyabadve.myreddit.model.Data_;
 import com.ajinkyabadve.myreddit.model.ReddIt;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 
-/**
- * Created by Ajinkya on 25/07/2016.
- */
 public class MainPresenter implements MainContract.UserActionsListener {
 
     private static final String TAG = MainPresenter.class.getSimpleName();
@@ -73,32 +64,6 @@ public class MainPresenter implements MainContract.UserActionsListener {
                         mainView.showReddItPost(children);
                     }
                 });
-    }
-
-    private List<Child> parseJason(String JasonString) {
-        List<Child> children = new ArrayList<Child>();
-        try {
-            JSONObject jsonObject = new JSONObject(JasonString);
-            JSONObject dataObject = jsonObject.getJSONObject("data");
-
-            JSONArray childrenJSONArray = dataObject.getJSONArray("children");
-            int size = childrenJSONArray.length();
-            for (int i = 0; i < size; i++) {
-                Child child = new Child();
-                Data_ data_ = new Data_();
-                JSONObject childrenJSONObject = childrenJSONArray.getJSONObject(i);
-                JSONObject dataJsonObject = childrenJSONObject.getJSONObject("data");
-                data_.setTitle(dataJsonObject.getString("title"));
-                data_.setThumbnail(dataJsonObject.getString("thumbnail"));
-                data_.setPermalink(dataJsonObject.getString("permalink"));
-                data_.setAuthor(dataJsonObject.getString("author"));
-                child.setData(data_);
-                children.add(child);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        return children;
     }
 
 

@@ -4,9 +4,6 @@ import com.ajinkyabadve.myreddit.model.Child;
 
 import java.util.List;
 
-/**
- * Created by Ajinkya on 25/07/2016.
- */
 public interface MainContract {
 
     interface View {

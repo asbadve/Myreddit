@@ -1,6 +1,5 @@
 package com.ajinkyabadve.myreddit.presenter;
 
-import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -14,19 +13,14 @@ import com.ajinkyabadve.myreddit.view.PostFragment;
 import java.lang.ref.WeakReference;
 import java.util.List;
 
-/**
- * Created by Ajinkya on 25/07/2016.
- */
 public class ReddItViewPagerAdapter extends FragmentPagerAdapter {
-    private final Context context;
     private final List<Child> children;
     private final SparseArray<WeakReference<Fragment>> instantiatedFragments = new SparseArray<>();
     private int pageCount;
 
 
-    public ReddItViewPagerAdapter(FragmentManager fm, Context context, List<Child> children) {
+    public ReddItViewPagerAdapter(FragmentManager fm, List<Child> children) {
         super(fm);
-        this.context = context;
         this.children = children;
         this.pageCount = children.size();
     }
