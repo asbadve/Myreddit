@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Myreddit</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Crash report -->
+    <string name="crash_toast_text" translatable="false"> Application unexpectedly closed,Would you like to inform it to developer team ? </string>
+    <string name="crash_title" translatable="false"> Send crash report </string>
 </resources>
