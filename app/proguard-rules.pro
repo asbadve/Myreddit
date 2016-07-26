@@ -15,3 +15,13 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-dontwarn com.squareup.**
+-dontwarn okio.**
+-keepattributes SourceFile,LineNumberTable
+-dontwarn retrofit2.Platform$Java8
+-dontwarn com.squareup.picasso.**
+-dontwarn sun.misc.Unsafe
+-dontwarn org.w3c.dom.bootstrap.DOMImplementationRegistry
+-keepclasseswithmembernames class * {
+    native <methods>;
+}
